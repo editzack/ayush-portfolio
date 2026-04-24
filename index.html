@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ayush Mishra | Portfolio</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:'Segoe UI',sans-serif;
+  color:white;
+  overflow-x:hidden;
+}
+
+/* 🎬 VIDEO BACKGROUND */
+video{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  z-index:-2;
+}
+
+/* OVERLAY */
+.overlay{
+  position:fixed;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.65);
+  z-index:-1;
+}
+
+/* NAVBAR */
+nav{
+  position:fixed;
+  width:100%;
+  top:0;
+  display:flex;
+  justify-content:space-between;
+  padding:15px 40px;
+  background:rgba(0,0,0,0.5);
+  backdrop-filter:blur(10px);
+  z-index:100;
+}
+
+nav h2{
+  color:#ff6b00;
+}
+
+nav a{
+  margin-left:20px;
+  color:white;
+  text-decoration:none;
+  font-size:14px;
+}
+
+/* CONTAINER */
+.container{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:20px;
+  animation:fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(40px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+h1{
+  font-size:4rem;
+}
+
+h1 span{
+  color:#ff6b00;
+}
+
+p{
+  margin:1rem 0;
+  color:#ddd;
+  max-width:600px;
+  line-height:1.6;
+}
+
+/* BUTTONS */
+.btn{
+  display:inline-block;
+  margin:10px;
+  padding:12px 25px;
+  background:#ff6b00;
+  color:black;
+  text-decoration:none;
+  font-weight:bold;
+  transition:0.3s;
+}
+
+.btn:hover{
+  transform:scale(1.1);
+  box-shadow:0 0 30px #ff6b00,0 0 60px #ff6b00;
+}
+
+/* SECTIONS */
+.section{
+  margin-top:60px;
+}
+
+h2{
+  color:#ff6b00;
+  margin-bottom:10px;
+}
+
+/* CONTACT */
+.contact a{
+  display:inline-block;
+  margin:10px;
+  color:white;
+  text-decoration:none;
+  border:1px solid #ff6b00;
+  padding:10px 20px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  h1{font-size:2.5rem;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- VIDEO -->
+<video autoplay muted loop playsinline>
+  <source src="luffy1.mp4" type="video/mp4">
+</video>
+
+<div class="overlay"></div>
+
+<!-- NAVBAR -->
+<nav>
+  <h2>Ayush</h2>
+  <div>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HOME -->
+<div class="container" id="home">
+  <h1 id="typing"></h1>
+
+  <p>
+    Future Full Stack Developer • Anime Lover • Content Creator  
+    Building skills and projects every single day.
+  </p>
+
+  <a href="#projects" class="btn">View Work</a>
+  <a href="#contact" class="btn">Contact Me</a>
+
+  <!-- ABOUT -->
+  <div class="section" id="about">
+    <h2>About Me</h2>
+    <p>
+      Main Ayush Mishra hoon. Coding journey start ki hai aur ab Full Stack Development seekh raha hoon.
+      Python ke baad ab HTML, CSS aur aage JavaScript seekh raha hoon.
+    </p>
+  </div>
+
+  <!-- PROJECTS -->
+  <div class="section" id="projects">
+    <h2>Projects</h2>
+    <p>
+      🔹 Portfolio Website  
+      🔹 AI Projects (Coming Soon)  
+      🔹 Editing Work (YouTube Content)
+    </p>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="section contact" id="contact">
+    <h2>Contact</h2>
+    <p>Connect with me:</p>
+
+    <!-- 🔥 YAHAN TU APNE LINKS DAALNA -->
+    <a href="https://youtube.com/@editzack">YouTube</a>
+    <a href="#">GitHub</a>
+    <a href="akm04066@gmail.com">Email</a>
+  </div>
+
+</div>
+
+<script>
+/* ✨ TYPING EFFECT */
+let text="Ayush Mishra";
+let i=0;
+function type(){
+  if(i<text.length){
+    document.getElementById("typing").innerHTML += text.charAt(i);
+    i++;
+    setTimeout(type,100);
+  }
+}
+type();
+
+/* 🖱️ MOUSE LIGHT EFFECT */
+document.addEventListener("mousemove", (e)=>{
+  document.body.style.background =
+  `radial-gradient(circle at ${e.clientX}px ${e.clientY}px, rgba(255,107,0,0.15), transparent 40%)`;
+});
+</script>
+
+</body>
+</html>
